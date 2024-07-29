@@ -61,7 +61,9 @@ application.properties 에는 server.port=포트번호, Oracle DB 연결문, DB(
 mybatis를 통해 Java와 xml(sql문) 코드를 연결했습니다. 
 xml파일의 sql문은 <mapper namespace="com.kh.mapper.KHMapper"> @Mapper가 존재하는 파일을 통해 연결을 설정했습니다.
 insert, select, update, delete id="" id 값은 Mapper.java 파일의 메서드명과 일치해야 올바르게 읽고 연결 할 수 있습니다. 
-Mapper.java 파일은 interface로 DTO 객체명과 sql id값을 통해 구현할 메서드를 생성합니다.  
+Mapper.java 파일은 interface로 DTO 객체명과 sql id값을 통해 구현할 메서드를 생성합니다. 
+Service.java 파일에서는 인터페이스를 구현하기 위해 @Service을 사용하며 Mapper 객체를 생성하고 객체를 통해서 메서드를 구현합니다.
+사용한 Controller는 일반적인 컨트롤러로 return 값으로 사용자에게 보여 줄 .html 주소 값을 같습니다.
 
 
 
