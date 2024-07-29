@@ -49,6 +49,7 @@
 
 # [2] Getting Started
 *만약 운영체제에 따라 프로그램을 다르게 동작시켜야한다면, 운영체제별로 동작 방법을 설명하세요*
+
 Oracle SQL Developer 설치 password 설정 / 사용 폴더 cmd 진입 sqlplus as sysdba 입력 후 password 입력
 CREATE USER kh_T IDENTIFIED BY kh1234; // DB 아이디와 비밀번호 생성
 GRANT RESOURCE, CONNET TO kh_T; 테이블, DB연결 권한 부여 // DBA를 통해 모든 권한 부여할 수 있습니다. 
@@ -58,6 +59,10 @@ Eclipse 실행 - Spring Starter Project 생성하고, 자바 라이브러리 추
 Thymeleaf, Oracle Driver, JDBC API, Lombok, String Boot DevTools, MyBatis Framework, Spring Web을 사용했습니다.
 application.properties 에는 server.port=포트번호, Oracle DB 연결문, DB(아이디, 비밀번호),
 mybatis를 통해 Java와 xml(sql문) 코드를 연결했습니다. 
+xml파일의 sql문은 <mapper namespace="com.kh.mapper.KHMapper"> @Mapper가 존재하는 파일을 통해 연결을 설정했습니다.
+insert, select, update, delete id="" id 값은 Mapper.java 파일의 메서드명과 일치해야 올바르게 읽고 연결 할 수 있습니다. 
+Mapper.java 파일은 interface로 DTO 객체명과 sql id값을 통해 구현할 메서드를 생성합니다.  
+
 
 
 ## Prerequisites
