@@ -49,6 +49,8 @@
 
 # [2] Getting Started
 *만약 운영체제에 따라 프로그램을 다르게 동작시켜야한다면, 운영체제별로 동작 방법을 설명하세요*
+Eclipse 실행 - Spring Starter Project 생성하고 
+
 
 ## Prerequisites
 *프로젝트를 동작시키기 위해 필요한 소프트웨어와 라이브러리를 나열하고 어떻게 다운받을 수 있는지 설명하세요.*
