@@ -55,17 +55,17 @@ CREATE USER kh_T IDENTIFIED BY kh1234; // DB 아이디와 비밀번호 생성
 GRANT RESOURCE, CONNET TO kh_T; 테이블, DB연결 권한 부여 // DBA를 통해 모든 권한 부여할 수 있습니다. 
 CREATE TABLE 테이블명 (테이블 컬럼 정보 값); 테이블 생성
 
+사용할 버전의 Eclipse 설치 / JDK(자바 개발자 키트) 다운로드하여 사용합니다. 
 Eclipse 실행 - Spring Starter Project 생성하고, 자바 라이브러리 추가 목록으로는 pom.xml 안에
 Thymeleaf, Oracle Driver, JDBC API, Lombok, String Boot DevTools, MyBatis Framework, Spring Web을 사용했습니다.
-application.properties 에는 server.port=포트번호, Oracle DB 연결문, DB(아이디, 비밀번호),
-mybatis를 통해 Java와 xml(sql문) 코드를 연결했습니다. 
-xml파일의 sql문은 <mapper namespace="com.kh.mapper.KHMapper"> @Mapper가 존재하는 파일을 통해 연결을 설정했습니다.
-insert, select, update, delete id="" id 값은 Mapper.java 파일의 메서드명과 일치해야 올바르게 읽고 연결 할 수 있습니다. 
-Mapper.java 파일은 interface로 DTO 객체명과 sql id값을 통해 구현할 메서드를 생성합니다. 
+application.properties 에는 server.port=포트번호, Oracle DB 연결문, DB(아이디, 비밀번호), mybatis를 통해 Java와 xml(sql문) 코드를 연결했습니다. 
+xml파일의 sql문은 <mapper namespace="com.kh.mapper.KHMapper"> @Mapper가 존재하는 파일을 통해 연결을 설정했습니다. 
+<insert, select, update, delete id="" parameterType="com.kh.dto.DTO"> id 값은 Mapper.java 파일의 메서드명과 일치해야 올바르게 읽고 연결 할 수 있습니다.
+DTO.java 파일은 DB에 존재하는 컬럼명과 일치하게 생성하여 parameterType을 통해 값을 읽어왔습니다.
+Mapper.java 파일은 interface로 DTO 객체와 sql id값을 통해 구현할 메서드를 생성합니다. 
 Service.java 파일에서는 인터페이스를 구현하기 위해 @Service을 사용하며 Mapper 객체를 생성하고 객체를 통해서 메서드를 구현합니다.
-사용한 Controller는 일반적인 컨트롤러로 return 값으로 사용자에게 보여 줄 .html 주소 값을 같습니다.
-
-
+사용한 Controller는 일반적인 컨트롤러로 return 값으로 사용자에게 보여 줄 .html 주소 값을 반환합니다.
+@GetMapping 또는 @PostMapping을 통해 ("/url") 경로를 받아서 명령을 수행한 뒤 html 주소를 반환했습니다.
 
 ## Prerequisites
 *프로젝트를 동작시키기 위해 필요한 소프트웨어와 라이브러리를 나열하고 어떻게 다운받을 수 있는지 설명하세요.*
