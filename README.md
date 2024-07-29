@@ -49,7 +49,15 @@
 
 # [2] Getting Started
 *만약 운영체제에 따라 프로그램을 다르게 동작시켜야한다면, 운영체제별로 동작 방법을 설명하세요*
-Eclipse 실행 - Spring Starter Project 생성하고 
+Oracle SQL Developer 설치 password 설정 / 사용 폴더 cmd 진입 sqlplus as sysdba 입력 후 password 입력
+CREATE USER kh_T IDENTIFIED BY kh1234; // DB 아이디와 비밀번호 생성
+GRANT RESOURCE, CONNET TO kh_T; 테이블, DB연결 권한 부여 // DBA를 통해 모든 권한 부여할 수 있습니다. 
+CREATE TABLE 테이블명 (테이블 컬럼 정보 값); 테이블 생성
+
+Eclipse 실행 - Spring Starter Project 생성하고, 자바 라이브러리 추가 목록으로는 pom.xml 안에
+Thymeleaf, Oracle Driver, JDBC API, Lombok, String Boot DevTools, MyBatis Framework, Spring Web을 사용했습니다.
+application.properties 에는 server.port=포트번호, Oracle DB 연결문, DB(아이디, 비밀번호),
+mybatis를 통해 Java와 xml(sql문) 코드를 연결했습니다. 
 
 
 ## Prerequisites
